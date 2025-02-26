@@ -1,0 +1,1 @@
+Programul afișează "Hello World!", declară un șir de stringuri, efectuează calculele cerute în cerință asupra unui număr random și afișează languages de suma cifrelor numărului.
