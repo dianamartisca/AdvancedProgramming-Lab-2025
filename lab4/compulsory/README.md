@@ -1,0 +1,3 @@
+Programul conține clasa Location care implementează interfața Comparable<T> pentru a putea suprascrie metoda compareTo(Location other), cu scopul de a sorta locațiile după numele lor. Cele trei tipuri de locații sunt implementate printr-un enum. 
+
+În clasa de bază Main este creat un array de locații, iar apoi, folosind Java Stream API, este creat un TreeSet de locații friendly, sortate automat după nume (deoarece metoda compareTo este suprascrisă după nume), și un LinkedList de locații enemy, sortate mai întâi după tip iar apoi după nume. 
