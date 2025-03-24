@@ -1,0 +1,5 @@
+Programul conține clasa Location care implementează interfața Comparable<T> pentru a putea suprascrie metoda compareTo(Location other), cu scopul de a sorta locațiile după numele lor. Cele trei tipuri de locații sunt implementate printr-un enum. 
+
+În clasa de bază Main este creat un array de locații, iar apoi, folosind JavaFaker, sunt adăugate 10 locații fictive în array. Cu ajutorul Java Stream API este creat un Map care reține pentru fiecare tip locațiile de acel tip. 
+
+Se generează un graf orientat cu greutăți, în care nodurile reprezintă câte o locație, iar muchiile sunt plasate random, având un cost tot random, care reprezintă timpul de deplasare de la o locație la alta. Se alege prima locație ca fiind cea de start, iar apoi, folosindu-se un obiect de tipul DijkstraShortestPath se determină drumurile de cost minim de la punctul de start la toate celelalte locații. La final, se afișează toate locațiile și timpul necesar robotului pentru a ajunge la acestea. 
