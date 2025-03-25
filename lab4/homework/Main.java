@@ -16,11 +16,11 @@ public class Main {
         List<Location> locations = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            Location.Type type = Location.Type.values()[random.nextInt(3)];
+            Type type = Type.values()[random.nextInt(3)];
             locations.add(new Location(faker.address().cityName(), type));
         }
 
-        Map<Location.Type, List<Location>> locationsByType = locations.stream()
+        Map<Type, List<Location>> locationsByType = locations.stream()
                 .collect(Collectors.groupingBy(Location::getType));
 
         Graph<Location, DefaultWeightedEdge> graph = new SimpleDirectedWeightedGraph<>(DefaultWeightedEdge.class);
@@ -49,7 +49,7 @@ public class Main {
             }
         }
 
-        Arrays.stream(Location.Type.values()).forEach(type -> {
+        Arrays.stream(Type.values()).forEach(type -> {
             System.out.println("\n" + type + " locations:");
             locationsByType.getOrDefault(type, Collections.emptyList()).forEach(loc ->
                     System.out.println(loc + " - Time: " + shortestTimes.get(loc))

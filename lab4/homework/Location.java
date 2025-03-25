@@ -1,7 +1,6 @@
 package org.example;
 
 public class Location implements Comparable<Location> {
-    public enum Type { FRIENDLY, NEUTRAL, ENEMY }
 
     private String name;
     private Type type;
