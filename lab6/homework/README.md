@@ -2,7 +2,7 @@ Programul conține clasele Dot și Line care permit inițializarea unui punct ș
 
 Clasa ConfigPanel creează câmpul în care poate fi introdus numărul de puncte și butonul de start. Prin apăsarea butonului de start este apelată metoda startNewGame din clasa de bază MainFrame.
 
-Clasa ControlPanel creează butoanele de Save, Load și Exit. La butoanele Save, Load și Export to PNG se apelează metodele corespunzătoare din clasa DrawingPanel, iar la butonul Exit se oprește programul.
+Clasa ControlPanel creează butoanele de Save, Load, Export to PNG și Exit. La butoanele Save, Load și Export to PNG se apelează metodele corespunzătoare din clasa DrawingPanel, iar la butonul Exit se oprește programul.
 
 Clasa Score are două atribute ce memoreză scorul celor doi jucători și o metodă de updateScore care să actualizeze punctajele după adăugarea fiecărei linii. Metoda getMSTLines caută arborele de acoperire de cost minim care conectează toate punctele din joc. Astfel, se poate calcula cel mai bun scor posibil pentru fiecare jucător, considerând că aceștia aleg mereu cele mai scurte linii, care fac parte din arborele de acoperire. Algoritmul folosit este de tip Kruskal, pentru realizarea căruia s-a utilizat și o clasă UnionFind. Metoda showScores afișează la finalul jocului punctajele obținute, dar și punctajele cele mai bune posibile.
 
