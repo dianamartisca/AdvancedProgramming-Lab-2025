@@ -1,0 +1,11 @@
+Programul conține clasele Dot și Line care permit inițializarea unui punct și a unei linii. 
+
+Clasa ConfigPanel creează câmpul în care poate fi introdus numărul de puncte și butonul de start. Prin apăsarea butonului de start este apelată metoda startNewGame din clasa de bază MainFrame.
+
+Clasa ControlPanel creează butoanele de Save, Load și Exit. La butoanele Save, Load și Export to PNG se apelează metodele corespunzătoare din clasa DrawingPanel, iar la butonul Exit se oprește programul.
+
+Clasa Score are două atribute ce memoreză scorul celor doi jucători și o metodă de updateScore care să actualizeze punctajele după adăugarea fiecărei linii. Metoda getMSTLines caută arborele de acoperire de cost minim care conectează toate punctele din joc. Astfel, se poate calcula cel mai bun scor posibil pentru fiecare jucător, considerând că aceștia aleg mereu cele mai scurte linii, care fac parte din arborele de acoperire. Algoritmul folosit este de tip Kruskal, pentru realizarea căruia s-a utilizat și o clasă UnionFind. Metoda showScores afișează la finalul jocului punctajele obținute, dar și punctajele cele mai bune posibile.
+
+Clasa DrawingPanel conține o listă de puncte și una de linii. Prin metoda generateDots se curăță lista de puncte, cea de linii și scorul anterior și apoi se adaugă în listă numărul de puncte specificate în căsuța din ConfigPanel, a căror poziție este generată random. Metoda addLine adaugă o linie în lista de linii. Metoda getDotAt stabilește punctul care a fost apăsat, în funcție de coordonatele mouse-ului. Metoda areAllDotsConnected verifică, prin apelarea unui dfs, dacă toate punctele sunt unite. Metoda paintComponent curăță și resetează panoul, iar apoi desenează punctele și liniile pe tablă. În constructor sunt urmărite acțiunile mouse-ului, utilizând un MouseAdapter pentru care este suprascrisă metoda mousePressed, ca să coloreze liniile în albastru sau roșu, în funcție de numărul jucătorului. Totodată, este actualizat scorul și se verifică dacă toate punctele sunt conectate.  
+
+Clasa de bază MainFrame conține câte o componentă din fiecare tip: ConfigPanel, DrawingPanel și ControlPanel. În constructor se setează titlul, dimensiunea ferestrei și pozițiile celor trei componente. În metoda startNewGame se apelează metoda generateDots din clasa DrawingPanel. 
