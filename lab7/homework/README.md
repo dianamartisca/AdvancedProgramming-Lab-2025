@@ -1,0 +1,13 @@
+Programul conține clasa Tile, în care se păstrează informațiile despre o piesă de joc, care reprezintă o literă și are un număr de puncte, și clasa Bag, care reprezintă săculețul în care se regăsesc piesele de joc. Acestea sunt memorate printr-o listă de obiecte de tip Tile. În constructor se creează săculețul, iar prin metoda extractTiles(int count) se extrag count piese. 
+
+În clasa Timekeeper se setează, prin constructor, o limită de timp pentru care să dureze jocul, thread-urile pentru jucători și setDaemon(true) pentru a nu bloca închiderea aplicației, chiar dacă threadul Timekeeper rămâne activ. Prin metoda run() se afișează timpul scurs după fiecare secundă, întrerupându-se jucătorii atunci când se atinge limita de timp. 
+
+În clasa Board se creează o listă de cuvinte pentru a memora cuvintele adăugate pe tabla de joc, prin metoda submitWord. 
+
+În clasa Score se modifică punctele unui jucător, prin metoda addPoints(), și se calculează punctele unui cuvânt, prin metoda calculateWordScore. 
+
+În clasa Dictionary se creează un dicționar care conține cuvintele din fișierul dictionary.txt, generat cu Aspell, și se verifică existența unui cuvânt în dicționar, prin metoda isWord.
+
+În clasa Player se declară un jucător (prin nume și Id), un săculeț, o tablă, un dicționar, un scor și o listă de piese pe care le are jucătorul în mână. Prin suprascrierea metodei run din clasa Thread este simulat jocul. Se utilizează Lock și Condition pentru a asigura sincronizarea threadurilor (jucătorii extrag și pun litere pe tablă pe rând). Pentru a verifica dacă jucătorul poate forma un cuvânt cu literele din mână, se apelează metoda findValidWord, care la rândul ei apelează metodele generateSubsets și findValidPermutation, utilizate pentru a forma toate combinațiile posibile de litere. Dacă se găsește un cuvânt valid, acesta este pus pe tablă, se actualizează scorul jucătorului și îi sunt înlocuite piesele folosite. În caz contrar, sunt înlocuite toate literele și se afișează un mesaj informativ. 
+
+În clasa de bază Main se inițializează un săculeț, o tablă, un dicționar, două scoruri și doi playeri. Totodată, se pornește și un timekeeper de 5 secunde. Jocul începe pentru amândoi prin apelarea metodei start pentru fiecare în parte (firele de execuție sunt în paralel), iar la final (prin apelarea metodei join se așteaptă ca ambele fire de execuție să se încheie, în cazul în care nu sunt încheiate de timekeeper) se afișează cuvintele de pe tablă, cele două scoruri și câștigătorul. 
