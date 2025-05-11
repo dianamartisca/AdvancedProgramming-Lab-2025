@@ -1,0 +1,20 @@
+May 11, 2025 5:26:47 PM org.example.repositories.AbstractRepository create
+INFO: Entity created: org.example.entities.Continent@5175d9ad
+May 11, 2025 5:26:47 PM org.example.repositories.AbstractRepository create
+INFO: Entity created: org.example.entities.Continent@40d96578
+May 11, 2025 5:26:47 PM org.example.repositories.AbstractRepository findById
+INFO: findById executed in 4ms for ID: 1
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository findByName
+INFO: findByName executed in 77ms for name pattern: A
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository create
+INFO: Entity created: org.example.entities.Country@3855d9b2
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository findById
+INFO: findById executed in 1ms for ID: 1
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository findByName
+INFO: findByName executed in 10ms for name pattern: Chi
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository create
+INFO: Entity created: org.example.entities.City@53cddaf8
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository findById
+INFO: findById executed in 0ms for ID: 1
+May 11, 2025 5:26:48 PM org.example.repositories.AbstractRepository findByName
+INFO: findByName executed in 3ms for name pattern: Be
