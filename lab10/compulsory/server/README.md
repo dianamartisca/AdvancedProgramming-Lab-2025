@@ -1,0 +1,5 @@
+Programul conține clasa ClientThread, care se conectează la un client prin atributul clientSocket și interacționează cu serverul prin atributul server de tip GameServer. Prin suprascrierea metodei run sunt citite mesaje de la client și apoi afișate. Mesajul "stop" determină oprirea serverului, iar mesajul "exit" deconectarea clientului.
+
+Clasa GameServer declară atributul port, la care ascultă serverul, și un serverSocket la care se pot conecta clienții. Metoda start inițializează socket-ul și, printr-un while, așteaptă conexiuni de la clienți. Pentru fiecare conexiune inițializează un ClientThread. Metoda stop oprește serverul, iar metoda isRunnning este utilizată pentru a determina dacă un server mai e pornit.
+
+În cadrul metodei main este setat portul și se creează un obiect de tipul GameServer, apelându-se metode start din cadrul acestuia.
