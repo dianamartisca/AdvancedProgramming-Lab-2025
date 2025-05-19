@@ -1,0 +1,3 @@
+Programul conține clasa GameClient ce are un constructor în care sunt inițializate adresa serverului și portul la care se conectează clientul. Metoda start se conectează prin socket la adresa și portul specificate, iar apoi, printr-un while, primește comenzi de la linia de comandă. Comenzile sunt trimise serverului, iar apoi se afișează răspunsul din partea acestuia. La comenzile "stop" și "exit" se oprește și trimite un mesaj corespunzător serverului. 
+
+În cadrul metodei main se setează adresa și portul serverului și se creează un obiect de tipul GameClient, apelându-se apoi metoda start. 
