@@ -1,0 +1,3 @@
+Programul conține clasa SampleTest în care sunt declarate 3 metode statice, fără parametri, adnotate cu @Test, și 2 metode statice cu parametri. Aceasta este clasa care va fi analizată de ClassAnalyzer.
+
+În clasa de bază ClassAnalyzer se verifică dacă s-a trimis la linia de comandă numele clasei ce trebuie testată. Se ia apoi clasa respectivă și se parcurg metodele acesteia, pentru a afișa numele lor, tipul returnat, parametri. Se parcurg apoi metodele statice, adnotate cu @Test și fără parametri, pentru a fi invocate și afișat răspunsul la linia de comandă. 
